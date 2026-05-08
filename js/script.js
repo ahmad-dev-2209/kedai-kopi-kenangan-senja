@@ -1,24 +1,38 @@
 // Toggle class active untuk hamburger menu
 const navbarNav = document.querySelector('.navbar-nav');
+const searchForm = document.querySelector('.search-form');
+const searchBox = document.querySelector('#search-box');
+const shoppingCart = document.querySelector('.shopping-cart');
+const itemDetailModal = document.querySelector('#item-detail-modal');
+
+const closeAllPanels = () => {
+  navbarNav.classList.remove('active');
+  searchForm.classList.remove('active');
+  shoppingCart.classList.remove('active');
+};
+
 // ketika hamburger menu di klik
-document.querySelector('#hamburger-menu').onclick = () => {
+document.querySelector('#hamburger-menu').onclick = (e) => {
   navbarNav.classList.toggle('active');
+  searchForm.classList.remove('active');
+  shoppingCart.classList.remove('active');
+  e.preventDefault();
 };
 
 // Toggle class active untuk search form
-const searchForm = document.querySelector('.search-form');
-const searchBox = document.querySelector('#search-box');
-
 document.querySelector('#search-button').onclick = (e) => {
   searchForm.classList.toggle('active');
+  navbarNav.classList.remove('active');
+  shoppingCart.classList.remove('active');
   searchBox.focus();
   e.preventDefault();
 };
 
 // Toggle class active untuk shopping cart
-const shoppingCart = document.querySelector('.shopping-cart');
 document.querySelector('#shopping-cart-button').onclick = (e) => {
   shoppingCart.classList.toggle('active');
+  navbarNav.classList.remove('active');
+  searchForm.classList.remove('active');
   e.preventDefault();
 };
 
@@ -42,11 +56,11 @@ document.addEventListener('click', function (e) {
 });
 
 // Modal Box
-const itemDetailModal = document.querySelector('#item-detail-modal');
 const itemDetailButtons = document.querySelectorAll('.item-detail-button');
 
 itemDetailButtons.forEach((btn) => {
   btn.onclick = (e) => {
+    closeAllPanels();
     itemDetailModal.style.display = 'flex';
     e.preventDefault();
   };
@@ -64,3 +78,16 @@ window.onclick = (e) => {
     itemDetailModal.style.display = 'none';
   }
 };
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeAllPanels();
+    itemDetailModal.style.display = 'none';
+  }
+});
+
+document.querySelectorAll('.navbar-nav a').forEach((link) => {
+  link.addEventListener('click', () => {
+    navbarNav.classList.remove('active');
+  });
+});

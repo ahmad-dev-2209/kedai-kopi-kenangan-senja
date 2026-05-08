@@ -35,9 +35,9 @@
     </div>
 
     <div class="navbar-extra">
-      <a href="#" id="search-button"><i data-feather="search"></i></a>
-      <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
-      <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      <a href="#" id="search-button" aria-label="Cari produk"><i data-feather="search"></i></a>
+      <a href="#" id="shopping-cart-button" aria-label="Buka keranjang belanja"><i data-feather="shopping-cart"></i></a>
+      <a href="#" id="hamburger-menu" aria-label="Buka menu navigasi"><i data-feather="menu"></i></a>
     </div>
 
     <!-- Search Form start -->
@@ -158,8 +158,8 @@
     <div class="row">
       <div class="product-card">
         <div class="product-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
-          <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+          <a href="#" aria-label="Tambahkan Coffee Beans 1 ke keranjang"><i data-feather="shopping-cart"></i></a>
+          <a href="#" class="item-detail-button" aria-label="Lihat detail Coffee Beans 1"><i data-feather="eye"></i></a>
         </div>
         <div class="product-image">
           <img src="img/products/1.jpg" alt="Product 1">
@@ -178,8 +178,8 @@
       </div>
       <div class="product-card">
         <div class="product-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
-          <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+          <a href="#" aria-label="Tambahkan Coffee Beans 1 ke keranjang"><i data-feather="shopping-cart"></i></a>
+          <a href="#" class="item-detail-button" aria-label="Lihat detail Coffee Beans 1"><i data-feather="eye"></i></a>
         </div>
         <div class="product-image">
           <img src="img/products/1.jpg" alt="Product 1">
@@ -198,8 +198,8 @@
       </div>
       <div class="product-card">
         <div class="product-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
-          <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+          <a href="#" aria-label="Tambahkan Coffee Beans 1 ke keranjang"><i data-feather="shopping-cart"></i></a>
+          <a href="#" class="item-detail-button" aria-label="Lihat detail Coffee Beans 1"><i data-feather="eye"></i></a>
         </div>
         <div class="product-image">
           <img src="img/products/1.jpg" alt="Product 1">
@@ -229,7 +229,7 @@
     <div class="row">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.56347862248!2d107.57311709235512!3d-6.903444341687889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6398252477f%3A0x146a1f93d3e815b2!2sBandung%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1672408575523!5m2!1sen!2sid"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+        allowfullscreen="" title="Peta lokasi Kopi Kenangan Senja di Bandung" class="map"></iframe>
 
       <form action="">
         <div class="input-group">
@@ -254,9 +254,9 @@
   <!-- Footer start -->
   <footer>
     <div class="socials">
-      <a href="#"><i data-feather="instagram"></i></a>
-      <a href="#"><i data-feather="twitter"></i></a>
-      <a href="#"><i data-feather="facebook"></i></a>
+      <a href="#" aria-label="Instagram Kopi Kenangan Senja"><i data-feather="instagram"></i></a>
+      <a href="#" aria-label="Twitter Kopi Kenangan Senja"><i data-feather="twitter"></i></a>
+      <a href="#" aria-label="Facebook Kopi Kenangan Senja"><i data-feather="facebook"></i></a>
     </div>
 
     <div class="links">
@@ -275,7 +275,7 @@
   <!-- Modal Box Item Detail start -->
   <div class="modal" id="item-detail-modal">
     <div class="modal-container">
-      <a href="#" class="close-icon"><i data-feather="x"></i></a>
+      <a href="#" class="close-icon" aria-label="Tutup detail produk"><i data-feather="x"></i></a>
       <div class="modal-content">
         <img src="img/products/1.jpg" alt="Product 1">
         <div class="product-content">
@@ -290,7 +290,7 @@
             <i data-feather="star"></i>
           </div>
           <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-          <a href="#"><i data-feather="shopping-cart"></i> <span>add to cart</span></a>
+          <a href="#" aria-label="Tambahkan Product 1 ke keranjang"><i data-feather="shopping-cart"></i> <span>add to cart</span></a>
         </div>
       </div>
     </div>
@@ -299,7 +299,9 @@
 
   <!-- Feather Icons -->
   <script>
-    feather.replace()
+    if (window.feather) {
+      feather.replace();
+    }
   </script>
 
   <!-- My Javascript -->
